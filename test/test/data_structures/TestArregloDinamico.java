@@ -24,14 +24,17 @@ public class TestArregloDinamico {
 	}
 
 	@Test
-	public void testArregloDinamico() {
+	public void testArregloEliminar() 
+	{
 		// TODO
+		arreglo.eliminar("1");
+		
 	}
 
 	@Test
 	public void testDarElemento() {
 		setUp2();
-		// TODO
+		// 
 	}
 
 }

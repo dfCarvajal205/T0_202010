@@ -29,26 +29,51 @@ public class TestModelo {
 	}
 
 	@Test
-	public void testDarTamano() {
-		// TODO
+	public void testDarTamano1() {
+		// 
+		setUp1();
+		assertEquals(100, modelo.retornarDatos().darCapacidad());
+	}
+	
+	@Test
+	public void testDarTamano2() {
+		setUp2();
+		assertEquals(100, modelo.retornarDatos().darCapacidad());
 	}
 
 	@Test
 	public void testAgregar() {
 		// TODO Completar la prueba
+		setUp2();
+		modelo.agregar("chocolate");
+		assertEquals(200, modelo.retornarDatos().darCapacidad());
+		assertEquals(101, modelo.retornarDatos().darTamano());
+		
+		
 	}
 
 	@Test
 	public void testBuscar() {
 		setUp2();
 		// TODO Completar la prueba
+		assertEquals(""+5, modelo.retornarDatos().buscar(""+5));
+		//Buscar el primero
+		assertEquals(""+0, modelo.retornarDatos().buscar(""+0));
+		
+		//Buscar el Último
+		assertEquals(""+99, modelo.retornarDatos().buscar(""+99));		
 	}
 
 	@Test
 	public void testEliminar() {
 		setUp2();
 		// TODO Completar la prueba
+		assertEquals(""+20, modelo.retornarDatos().eliminar(""+20));
 		
+		//Elimina el primero
+		assertEquals(""+0, modelo.retornarDatos().eliminar(""+0));
+		
+		//Elimina el último
+		assertEquals(""+99, modelo.retornarDatos().eliminar(""+99));
 	}
-
 }
